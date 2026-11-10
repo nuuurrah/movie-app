@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineCards — Movie App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="logo">🎬 Cine<span>Cards</span></h1>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search movies…" aria-label="Search movies" />
+      <select id="genre" aria-label="Filter by genre">
+        <option value="all">All genres</option>
+      </select>
+      <select id="sort" aria-label="Sort movies">
+        <option value="rating">Top rated</option>
+        <option value="year-desc">Newest</option>
+        <option value="year-asc">Oldest</option>
+        <option value="title">A–Z</option>
+      </select>
+      <button id="favToggle" class="chip" aria-pressed="false">♥ Favorites</button>
+    </div>
+  </header>
+
+  <main>
+    <p id="status" class="status" role="status"></p>
+    <section id="grid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <!-- Details modal -->
+  <dialog id="modal" class="modal">
+    <button class="close" id="closeModal" aria-label="Close">✕</button>
+    <div id="modalBody"></div>
+  </dialog>
+
+  <footer class="footer">Built with HTML, CSS &amp; JavaScript · Data: sample set (TMDB optional)</footer>
+
+  <script src="data/movies.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
